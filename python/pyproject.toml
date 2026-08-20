@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "toolkitlabs-jsonshim"
+version = "1.0.0"
+description = "Recover JSON from a model reply, or find out you cannot - plus the two free MALFORMED-300 / TOOLCALL-300 conformance scorers. Standard library only, no network, no telemetry."
+readme = "README.md"
+requires-python = ">=3.8"
+license = "CC0-1.0"
+license-files = ["LICENSE"]
+authors = [{ name = "Toolkit Labs" }]
+keywords = ["json", "llm", "parsing", "repair", "conformance", "benchmark", "agents"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "Topic :: Text Processing",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://toolkitlabs.org/tools/"
+Leaderboard = "https://toolkitlabs.org/leaderboard/"
+API = "https://toolkitlabs.org/api/"
+
+[project.scripts]
+jsonshim-score = "toolkitlabs_jsonshim:run_m300_scorer"
+toolcall-score = "toolkitlabs_jsonshim:run_tc300_scorer"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+py-modules = ["jsonshim"]
+packages = ["toolkitlabs_jsonshim"]
