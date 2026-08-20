@@ -110,3 +110,24 @@ It is for people 18 and over, and it is not a developer tool.
 
 Buying it changes nothing about this package. The harness, the leaderboard and
 the API stay free and CC0 for ever.
+
+## Structured-output conformance matrix — edition 1 (free)
+
+How reliably four LLM endpoints return output that actually validates against a given JSON Schema.
+**[conformance/edition-1/](conformance/edition-1/)** — data CC BY 4.0, harness CC0 1.0, no signup, no email.
+
+Read the limitations first: this is **4 endpoints x 6 schemas x 3 modes x 3 trials = 216 live calls in one run**,
+and 63 of 72 cells returned at least one HTTP 200. At three trials a cell's pass rate can only take four values
+(0, 1/3, 2/3, 1), so **per-cell rates are a coarse signal, not a benchmark score.** That is why it costs nothing.
+
+What does survive three trials, because it is categorical rather than a rate:
+
+- **The dominant failure is the provider rejecting the schema before the model ever runs.** In `native` mode only
+  **44 of 72** calls got an HTTP 200. `gemini-3.1-flash-lite` rejected **18 of 18** with its own words:
+  `Unknown name "additionalProperties" at 'generation_config.response_schema': Cannot find field.`
+- **Mechanically sanitising the schema per provider takes acceptance from 44/72 to 71/72** — and validation still
+  runs against the *original* schema, so nothing is smuggled past the check.
+- **Valid is not the same as parseable.** Plain prompting produced schema-valid output in **70 of 72** calls but only
+  **52 of 72** parsed with a bare `json.loads`. A consumer without an extraction step sees 0.722, not 0.972.
+
+Every number above is recomputed from `raw-runs.jsonl` by the shipped harness; run `harness.py --score .` yourself.
