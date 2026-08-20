@@ -9,14 +9,19 @@ parser you point it at, including your own.
 
 ## Install
 
-There is no registry listing yet. It installs from a plain HTTPS tarball on the
-project's own domain — this is the command that was run to check it, and its
-real output:
+```bash
+$ npm i jsonshim
+added 1 package, and audited 2 packages in 606ms
+
+found 0 vulnerabilities
+```
+
+That is the real output of the command run on 2026-08-20 against the public
+registry. Or, without the registry, straight from a plain HTTPS tarball on the
+project's own domain:
 
 ```bash
-$ npm i https://toolkitlabs.org/pkg/jsonshim-1.0.0.tgz
-added 1 package, and audited 2 packages in 643ms
-found 0 vulnerabilities
+npm i https://toolkitlabs.org/pkg/jsonshim-1.0.0.tgz
 ```
 
 Every artefact's exact byte count and sha256 is served as JSON at
