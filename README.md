@@ -71,7 +71,7 @@ tuned afterwards.
 ## Results already published
 
 Ten JavaScript parsers have been scored on all 300 cases; the table is free and
-CC0 at <https://toolkitlabs.org/leaderboard/>, machine-readable at
+CC0 at <https://toolkitlabs.org/leaderboard/?s=gh-jsonshim>, machine-readable at
 <https://toolkitlabs.org/api/>. Nobody pays to be listed, ranked or removed.
 The Python library this harness is named after scores 282/300 exact and invents
 5 values on unrecoverable cases — a real defect, documented and not fixed; on
@@ -82,8 +82,8 @@ the 275 recoverable cases `json-repair` beats it, 264 to 262.
 The open 12 cases per suite are a sample. The full labelled sets — every case
 with the rationale for its label, and the sealed answers — are sold, EUR 29 each:
 
-- MALFORMED-300, all 300 cases: <https://buy.stripe.com/4gMeVe8X42zy1gOfgp5Ne00?client_reference_id=gh-jsonshim-m300>
-- TOOLCALL-300, all 300 cases: <https://buy.stripe.com/14AdRa0qy3DC2kSb095Ne03?client_reference_id=gh-jsonshim-tc300>
+- MALFORMED-300, all 300 cases: <https://toolkitlabs.org/malformed300/?s=gh-jsonshim>
+- TOOLCALL-300, all 300 cases: <https://toolkitlabs.org/toolcall300/?s=gh-jsonshim>
 
 Nothing in this package is gated behind them; it scores any corpus you hand it.
 
@@ -99,7 +99,7 @@ next payment, the page stays readable to the end of the paid month and then
 becomes read-only, and a one-click delete erases the stored record immediately.
 It is for people 18 and over, and it is not a developer tool.
 
-<https://toolkitlabs.org/companion/>
+<https://toolkitlabs.org/companion/?s=gh-jsonshim>
 
 Buying it changes nothing about this package. The harness, the leaderboard and
 the API stay free and CC0 for ever.
