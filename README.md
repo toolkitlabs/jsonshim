@@ -52,6 +52,13 @@ Add `--json` for the summary object only, so it wires into CI. `npm test` runs
 the harness selftest; every expected value in it was derived by hand from the
 spec below before the file was run once.
 
+## See it in a browser first
+
+A free page runs strict `JSON.parse`, `jsonrepair` 3.15.0 and JSON5 2.2.3 over
+text you paste and compares their answers with the same `canon()` this package
+uses -- no signup, no card, nothing installed:
+<https://toolkitlabs.org/try/?s=gh-jsonshim>
+
 ## The grading spec
 
 | `expected_kind` | passes only by |
